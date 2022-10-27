@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date A Live</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/Logo - Purchaseway Animes.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <style>
+        .tela-exibicao {
+            width: 100%;
+            background-color: #222;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tela-exibicao div iframe {
+            border: none;
+            width: 80vw;
+            /* Aceitavél */
+        }
+        .conteiner {
+            background-color: black;
+        }
+        .conteiner ul li .button {
+            background-color: #222;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            margin-top: 2px;
+        }
+
+        /* Logo */
+        .logo-oficial {
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+            font-size: 0.8em;
+            border: 5px solid black;
+            width: 100px;
+            padding: 3px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: linear-gradient(210deg, #b642dd 0, #9339cb 25%, #7030b5 50%, #4d269f 75%, #291e8a 100%);
+        }
+        .logo-oficial:hover {
+            box-shadow: 0 0 10px white; 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <!-- Logo -->
+        <a href="../../../index.html">
+            <div class="logo-oficial">Pw Animes</div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../../index.html">Início</a></li>
+                <li><a href="#">Lista de Animes</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="#">Mangás</a></li>
+                <li><a href="#">Calendário</a></li>
+                <li><a href="#">Como Assistir?</a></li>
+            </ul>
+            <!-- Menu para versão Mobile -->
+            <button class="abrir-menu" id="abrir-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+        </nav>
+    </header>
+
+    <h1 class="titulo-anime">Date A Live</h1>
+    <div class="sinopse-anime-T">SINOPSE</div>
+    <div class="sinopse-anime">Itsuka Shido é um garoto do ensino médio. No último dia das férias de primavera, uma explosão destrói a cidade e uma menina de armadura aparece na frente dele. Shido irmã-de-lei, Kotori, diz- lhe que a menina é chamada de “Criatura desastroso especial designado: Spirit”, o que causa um terremoto de tempo-espaço. Kotori revelou que ela é o comandante da Ratatosk organização anti- espírito e ordena-lhe para ir a um encontro com a garota espírito. Kotori diz: “Eu não lhe peço para vencer o espírito . Deixa-la cair no amor com você e salvar o mundo.” Concluído</div>
+    <div class="age-anime">
+        <div class="ep-atual">EP 01</div>
+        <img src="../img/age-16.png" alt="idade">
+    </div>
+
+    <!-- Estrutura do conteúdo -->
+
+    <section class="tela-exibicao">
+        <div class="carregar">
+            <iframe src="https://drive.google.com/file/d/197_pgAy9JVE3AiH_t5imUEeL-b4_0Wxv/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>
+        </div>
+    </section>
+    
+    <section class="conteiner">
+        <ul>
+            <li><button class="selected-episode">EP 1</button></li>
+            <li><button class="button">EP 2</button></li>
+            <li><button class="button">EP 3</button></li>
+            <li><button class="button">EP 4</button></li>
+            <li><button class="button">EP 5</button></li>
+            <li><button class="button">EP 6</button></li>
+            <li><button class="button">EP 7</button></li>
+            <li><button class="button">EP 8</button></li>
+            <li><button class="button">EP 9</button></li>
+            <li><button class="button">EP 10</button></li>
+            <li><button class="button">EP 11</button></li>
+            <li><button class="button">EP 12</button></li>
+            <li><button class="button">EP 13</button></li>
+        </ul>
+    </section>
+
+    <footer class="rodape">
+        <h2>Purchaseway Animes - 2022</h2>
+        <h3>Todos os Direitos Reservados</h3>
+    </footer>
+    
+
+    <!-- JavaScript -->
+    <script>
+        const allButtonsEP = document.querySelectorAll('.conteiner ul li button');
+        const carregar = document.querySelector('.carregar');
+        const abrirMenu = document.querySelector('.abrir-menu');
+        const body = document.querySelector('body');
+        const painel = document.querySelector('.ep-atual');
+        const idadeInfo = document.querySelector('.age-anime img');
+
+        idadeInfo.addEventListener('click', () => {
+            alert('Classificação indicativa\nPara você ter um auxílio no que quer assistir');
+        })
+
+        // DATA = É onde fica alocado os dados dos episódios
+        var data = [
+          '<iframe src="https://drive.google.com/file/d/197_pgAy9JVE3AiH_t5imUEeL-b4_0Wxv/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/196goBKeYYZIjfzA_kOCX0uuRCOzS-BDV/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/193nJI_CvF-uPku0FbF54rrL-suTyNLLS/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/195kpLSqiB-C6bVWg9NxdTJWewAEcTCtW/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/190aZ8kGT8AxHYJLSqI-FCkE1Lh4ldfV7/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/18lT28df_IhNOQQSHyJrq_KEjNDAhCOIo/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/18sT0NErpLjv5CZSP8pKMuf76XmAn_sn7/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/18iZv2KpFGFmogpughxoK1P2jcqrQMAj3/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/18ha5GzXpC9eBqOJ5mcxbndsf0pkQCIBS/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/18b3Jz0h9A0JJi2UmvX6_AGhrJBw6b5fp/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/18_BJlqXopsoyBBqGD59Fle2wSiK_z0Fr/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/18aQA3DORBfjPFDf4knxJkGLqU4xb2J9d/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+          '<iframe src="https://drive.google.com/file/d/18aLkxuX5KBjllKNDgDH-Q1_QuAwg7lGy/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>'
+        ]
+
+        // Controlador
+        iniciaBtnEP();
+        function iniciaBtnEP(){
+            allButtonsEP[0].addEventListener('click', (ele) => {carregar.innerHTML = data[0];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 01';
+            });
+            allButtonsEP[1].addEventListener('click', (ele) => {carregar.innerHTML = data[1];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 02';
+            });
+            allButtonsEP[2].addEventListener('click', (ele) => {carregar.innerHTML = data[2];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 03';
+            });
+            allButtonsEP[3].addEventListener('click', (ele) => {carregar.innerHTML = data[3];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 04';
+            });
+            allButtonsEP[4].addEventListener('click', (ele) => {carregar.innerHTML = data[4];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 05';
+            });
+            allButtonsEP[5].addEventListener('click', (ele) => {carregar.innerHTML = data[5];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 06';
+            });
+            allButtonsEP[6].addEventListener('click', (ele) => {carregar.innerHTML = data[6];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 07';
+            });
+            allButtonsEP[7].addEventListener('click', (ele) => {carregar.innerHTML = data[7];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 08';
+            });
+            allButtonsEP[8].addEventListener('click', (ele) => {carregar.innerHTML = data[8];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 09';
+            });
+            allButtonsEP[9].addEventListener('click', (ele) => {carregar.innerHTML = data[9];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 10';
+            });
+            allButtonsEP[10].addEventListener('click', (ele) => {carregar.innerHTML = data[10];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 11';
+            });
+            allButtonsEP[11].addEventListener('click', (ele) => {carregar.innerHTML = data[11];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 12';
+            });
+            allButtonsEP[12].addEventListener('click', (ele) => {carregar.innerHTML = data[12];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 13';
+            });
+        }
+
+        // Menu para versão Mobile
+        // Bloqueador de repetições
+        var menuMobileREP = true;
+        abrirMenu.addEventListener('click', () => {
+            if(menuMobileREP){
+                menuMobileREP = false;
+                var container = document.createElement('div');
+                container.setAttribute('class', 'menuMobile');
+                container.innerHTML = '<ul><li><a href="../../../index.html">Início</a></li><li><a href="#">Lista de Animes</a></li><li><a href="#">Favoritos</a></li><li><a href="#">Mangás</a></li><li><a href="#">Calendário</a></li><li><a href="#">Como Assistir?</a></li></ul><div class="menuMobileFechar"><ion-icon name="close-outline"></ion-icon></div>';
+                body.append(container);
+            }
+
+            document.querySelector('.menuMobileFechar').addEventListener('click', () => {
+                menuMobileREP = true;
+                container.remove();
+            });
+        });
+
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
