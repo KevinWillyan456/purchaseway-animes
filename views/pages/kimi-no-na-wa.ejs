@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimi no Na Wa</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/Logo - Purchaseway Animes.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <style>
+        .tela-exibicao {
+            width: 100%;
+            background-color: #222;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tela-exibicao div iframe {
+            border: none;
+            width: 80vw;
+            /* Aceitavél */
+        }
+        .conteiner {
+            background-color: black;
+        }
+        .conteiner ul li .button {
+            background-color: #222;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            margin-top: 2px;
+        }
+
+        /* Logo */
+        .logo-oficial {
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+            font-size: 0.8em;
+            border: 5px solid black;
+            width: 100px;
+            padding: 3px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: linear-gradient(210deg, #b642dd 0, #9339cb 25%, #7030b5 50%, #4d269f 75%, #291e8a 100%);
+        }
+        .logo-oficial:hover {
+            box-shadow: 0 0 10px white; 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <!-- Logo -->
+        <a href="../../../index.html">
+            <div class="logo-oficial">Pw Animes</div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../../index.html">Início</a></li>
+                <li><a href="#">Lista de Animes</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="#">Mangás</a></li>
+                <li><a href="#">Calendário</a></li>
+                <li><a href="#">Como Assistir?</a></li>
+            </ul>
+            <!-- Menu para versão Mobile -->
+            <button class="abrir-menu" id="abrir-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+        </nav>
+    </header>
+
+    <h1 class="titulo-anime">Kimi no Na Wa Dublado</h1>
+    <div class="sinopse-anime-T">SINOPSE</div>
+    <div class="sinopse-anime">Mitsuha Miyamizu é uma jovem que mora no interior do Japão e que deseja deixar sua pequena cidade para trás para tentar a sorte em Tóquio. Enquanto isso, Taki Tachibana, é um jovem que trabalha em um restaurante italiano em Tóquio, e deseja largar o seu emprego para tentar se tornar um arquiteto. Os dois não se conhecem, mas estão direta e misteriosamente conectados pelas imagens de seus sonhos.</div>
+    <div class="age-anime">
+        <div class="ep-atual">EP 01</div>
+        <img src="../img/age-12.png" alt="idade">
+    </div>
+
+    <!-- Estrutura do conteúdo -->
+
+    <section class="tela-exibicao">
+        <div class="carregar">
+            <iframe src="https://drive.google.com/file/d/13M10mB1f_iRa5Obd7xjy9_xZQZCuE6tY/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>
+        </div>
+    </section>
+    
+    <section class="conteiner">
+        <ul>
+            <li><button class="selected-episode">EP 1</button></li>
+        </ul>
+    </section>
+
+    <footer class="rodape">
+        <h2>Purchaseway Animes - 2022</h2>
+        <h3>Todos os Direitos Reservados</h3>
+    </footer>
+    
+
+    <!-- JavaScript -->
+    <script>
+        const allButtonsEP = document.querySelectorAll('.conteiner ul li button');
+        const carregar = document.querySelector('.carregar');
+        const abrirMenu = document.querySelector('.abrir-menu');
+        const body = document.querySelector('body');
+        const painel = document.querySelector('.ep-atual');
+        const idadeInfo = document.querySelector('.age-anime img');
+
+        idadeInfo.addEventListener('click', () => {
+            alert('Classificação indicativa\nPara você ter um auxílio no que quer assistir');
+        })
+
+        // DATA = É onde fica alocado os dados dos episódios
+        var data = [
+            '<iframe src="https://drive.google.com/file/d/13M10mB1f_iRa5Obd7xjy9_xZQZCuE6tY/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>'
+        ]
+
+        // Controlador
+        iniciaBtnEP();
+        function iniciaBtnEP(){
+            allButtonsEP[0].addEventListener('click', (ele) => {carregar.innerHTML = data[0];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 01';
+            });
+        }
+
+        // Menu para versão Mobile
+        // Bloqueador de repetições
+        var menuMobileREP = true;
+        abrirMenu.addEventListener('click', () => {
+            if(menuMobileREP){
+                menuMobileREP = false;
+                var container = document.createElement('div');
+                container.setAttribute('class', 'menuMobile');
+                container.innerHTML = '<ul><li><a href="../../../index.html">Início</a></li><li><a href="#">Lista de Animes</a></li><li><a href="#">Favoritos</a></li><li><a href="#">Mangás</a></li><li><a href="#">Calendário</a></li><li><a href="#">Como Assistir?</a></li></ul><div class="menuMobileFechar"><ion-icon name="close-outline"></ion-icon></div>';
+                body.append(container);
+            }
+
+            document.querySelector('.menuMobileFechar').addEventListener('click', () => {
+                menuMobileREP = true;
+                container.remove();
+            });
+        });
+
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

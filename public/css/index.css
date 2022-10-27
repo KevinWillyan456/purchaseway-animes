@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #111111;
+}
+/* Cabeçalho */
+
+.cabecalho {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+a {
+  text-decoration: none;
+}
+.cabecalho nav ul {
+  list-style-type: none;
+  display: flex;
+}
+.cabecalho nav .abrir-menu {
+  display: none;
+  background-color: #721ec0;
+  width: 80px;
+  height: 80px;
+  border: none;
+}
+.cabecalho nav .abrir-menu div {
+  background-color: white;
+  width: 60px;
+  height: 10px;
+}
+.cabecalho nav .abrir-menu:hover {
+  box-shadow: 0 0 10px white; 
+}
+.cabecalho nav ul li a {
+  transition: 200ms;
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  background-color: #721ec0;
+  margin: 0 12px;
+  border: 5px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border-radius: 15px;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
+.cabecalho nav ul li a:hover {
+  box-shadow: 0 0 10px white; 
+}
+/* Logo */
+.logo-oficial {
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  font-size: 0.8em;
+  border: 5px solid black;
+  width: 100px;
+  padding: 3px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: linear-gradient(210deg, #b642dd 0, #9339cb 25%, #7030b5 50%, #4d269f 75%, #291e8a 100%);
+}
+.logo-oficial:hover {
+  box-shadow: 0 0 10px white; 
+}
+
+.lista-animes {
+  width: 100%;
+  padding: 20px;
+  background-color: #222;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Cartões do catalógo */
+
+.titulo-anime {
+  color: white;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  background-color: #431370;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
+.sinopse-anime-T {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+}
+.sinopse-anime {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+  text-align: justify;
+}
+.age-anime {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(43, 43, 43);
+}
+.age-anime img {
+  width: 80px;
+}
+.ep-atual {
+  color: white;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e7b731;
+}
+.selected-episode {
+  background-color: #721ec0;
+  color: white;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  margin-top: 2px;
+}
+.lista-animes article {
+  background-color: #444;
+  /* width: 200px; */
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px;
+}
+.lista-animes article a img {
+  width: 95%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.lista-animes article h1 {
+  color: yellow;
+  font-size: 16px;
+  width: 95%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-bottom: 6px;
+}
+.lista-animes article a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.conteiner ul li .button {
+  background-color: #222;
+  color: white;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  margin-top: 2px;
+}
+/* Menu para versão Mobile */
+.menuMobile {
+  animation: menuMobileEntrace 500ms forwards;
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@keyframes menuMobileEntrace {
+  0%{
+      transform: translateY(-100%);
+  }
+  100%{
+      transform: translateY(0);
+  }
+}
+.menuMobile .menuMobileFechar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #f12323;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.menuMobile .menuMobileFechar ion-icon {
+  font-size: 4em;
+  color: white;
+}
+
+
+.menuMobile ul {
+  list-style-type: none;
+}
+.menuMobile li {
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+}
+.menuMobile ul li a {
+  transition: 200ms;
+  text-decoration: none;
+  color: white;
+  padding: 14px;
+  background-color: #721ec0;
+  margin: 0px 12px;
+  border: 5px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  border-radius: 15px;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
+.menuMobile ul li a:hover {
+  box-shadow: 0 0 10px white; 
+}
+/* Footer - Rodapé */
+
+.rodape {
+  width: 100%;
+  background-color: rgb(10, 10, 10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+.rodape h2 {
+  color: #e7b731;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 20px;
+}
+.rodape h3 {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 16px;
+}
+
+/* Media Queries AREA */
+
+@media (max-width: 945px)
+{
+  .cabecalho nav ul li a {
+      display: none;
+  }
+  .cabecalho nav .abrir-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      cursor: pointer;
+  }
+}
+
+/* Catalógo responsivo */
+@media (max-width: 1300px)
+{
+  .lista-animes {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 800px)
+{
+  .lista-animes {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}

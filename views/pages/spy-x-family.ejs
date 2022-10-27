@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spy x Family</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/Logo - Purchaseway Animes.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <style>
+        .tela-exibicao {
+            width: 100%;
+            background-color: #222;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tela-exibicao div iframe {
+            border: none;
+            width: 80vw;
+            /* Aceitavél */
+        }
+        .conteiner {
+            background-color: black;
+        }
+        .conteiner ul li .button {
+            background-color: #222;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            margin-top: 2px;
+        }
+
+        /* Logo */
+        .logo-oficial {
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+            font-size: 0.8em;
+            border: 5px solid black;
+            width: 100px;
+            padding: 3px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: linear-gradient(210deg, #b642dd 0, #9339cb 25%, #7030b5 50%, #4d269f 75%, #291e8a 100%);
+        }
+        .logo-oficial:hover {
+            box-shadow: 0 0 10px white; 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <!-- Logo -->
+        <a href="../../../index.html">
+            <div class="logo-oficial">Pw Animes</div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../../index.html">Início</a></li>
+                <li><a href="#">Lista de Animes</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="#">Mangás</a></li>
+                <li><a href="#">Calendário</a></li>
+                <li><a href="#">Como Assistir?</a></li>
+            </ul>
+            <!-- Menu para versão Mobile -->
+            <button class="abrir-menu" id="abrir-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+        </nav>
+    </header>
+
+    <h1 class="titulo-anime">Spy x Family Dublado</h1>
+    <div class="sinopse-anime-T">SINOPSE</div>
+    <div class="sinopse-anime">Para o agente conhecido como "Crepúsculo", nenhuma ordem é muito alta se for pelo bem da paz. Operando como espião mestre de Westalis, Twilight trabalha incansavelmente para evitar que extremistas iniciem uma guerra com o país vizinho Ostania. Para sua última missão, ele deve investigar o político ostaniano Donovan Desmond infiltrando-se na escola de seu filho: a prestigiosa Eden Academy. Assim, o agente enfrenta a tarefa mais difícil de sua carreira: casar, ter um filho e brincar de família. Tw ilight, ou "Loid Forger", rapidamente adota a órfã despretensiosa Anya para fazer o papel de uma filha de seis anos e futura aluna da Eden Academy. Como esposa, ele se depara com Yor Briar, uma trabalhadora de escritório distraída que precisa de um parceiro fingido para impressionar seus amigos. No entanto, Loid não é o único com uma natureza oculta. Yor brilha como a assassina letal "Princesa Thorn". Para ela, casar com Loid cria a cobertura perfeita. Enquanto isso, Anya não é a garota comum que parece ser; ela é uma esper, o produto de experimentos secretos que lhe permitem ler mentes. Embora ela descubra suas verdadeiras identidades, Anya está emocionada que seus novos pais sejam agentes secretos legais! Ela nunca diria a eles, é claro. Isso arruinaria a diversão. Sob o disfarce de "The Forgers", o espião, o assassino e o esper devem agir como uma família enquanto realizam suas próprias agendas. Embora esses mentirosos e desajustados estejam apenas desempenhando papéis, eles logo descobrem que a família é muito mais do que relações de sangue.</div>
+    <div class="age-anime">
+        <div class="ep-atual">EP 01</div>
+        <img src="../img/age-16.png" alt="idade">
+    </div>
+
+    <!-- Estrutura do conteúdo -->
+
+    <section class="tela-exibicao">
+        <div class="carregar">
+            <iframe src="https://drive.google.com/file/d/1rkymKCQi6asalTQHFEozSLUfGmbI3wfW/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>
+        </div>
+    </section>
+    
+    <section class="conteiner">
+        <ul>
+            <li><button class="selected-episode">EP 1</button></li>
+            <li><button class="button">EP 2</button></li>
+            <li><button class="button">EP 3</button></li>
+            <li><button class="button">EP 4</button></li>
+            <li><button class="button">EP 5</button></li>
+            <li><button class="button">EP 6</button></li>
+            <li><button class="button">EP 7</button></li>
+            <li><button class="button">EP 8</button></li>
+        </ul>
+    </section>
+
+    <footer class="rodape">
+        <h2>Purchaseway Animes - 2022</h2>
+        <h3>Todos os Direitos Reservados</h3>
+    </footer>
+    
+
+    <!-- JavaScript -->
+    <script>
+        const allButtonsEP = document.querySelectorAll('.conteiner ul li button');
+        const carregar = document.querySelector('.carregar');
+        const abrirMenu = document.querySelector('.abrir-menu');
+        const body = document.querySelector('body');
+        const painel = document.querySelector('.ep-atual');
+        const idadeInfo = document.querySelector('.age-anime img');
+
+        idadeInfo.addEventListener('click', () => {
+            alert('Classificação indicativa\nPara você ter um auxílio no que quer assistir');
+        })
+
+        // DATA = É onde fica alocado os dados dos episódios
+        var data = [
+            '<iframe src="https://drive.google.com/file/d/1rkymKCQi6asalTQHFEozSLUfGmbI3wfW/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+            '<iframe src="https://drive.google.com/file/d/1rqd4VCX1YaodS20K2fsBbsTHRFcgkjK7/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+            '<iframe src="https://drive.google.com/file/d/1rdU1zuQOBuzK9ScWf6x2m0uSPS7OxdFF/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+            '<iframe src="https://drive.google.com/file/d/1rbreWA3IKivnv0yWhwWtLfB6MoOsGBef/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+            '<iframe src="https://drive.google.com/file/d/1rYv_-LMxsCngPdKu-oQyu_ZKgni636US/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+            '<iframe src="https://drive.google.com/file/d/1rUVntGtAOrHxGNl23AcwP_M2ER1-V2xb/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+            '<iframe src="https://drive.google.com/file/d/1rTDM7NpIT6cGwp-1Yb-OZsJNA8MKp4XY/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+            '<iframe src="https://drive.google.com/file/d/1rRGjbGRqEA3fXVNkQxjAaRZ1RWIYFq6p/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>'
+        ]
+
+
+        // Controlador
+        iniciaBtnEP();
+        function iniciaBtnEP(){
+            allButtonsEP[0].addEventListener('click', (ele) => {carregar.innerHTML = data[0];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 01';
+            });
+            allButtonsEP[1].addEventListener('click', (ele) => {carregar.innerHTML = data[1];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 02';
+            });
+            allButtonsEP[2].addEventListener('click', (ele) => {carregar.innerHTML = data[2];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 03';
+            });
+            allButtonsEP[3].addEventListener('click', (ele) => {carregar.innerHTML = data[3];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 04';
+            });
+            allButtonsEP[4].addEventListener('click', (ele) => {carregar.innerHTML = data[4];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 05';
+            });
+            allButtonsEP[5].addEventListener('click', (ele) => {carregar.innerHTML = data[5];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 06';
+            });
+            allButtonsEP[6].addEventListener('click', (ele) => {carregar.innerHTML = data[6];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 07';
+            });
+            allButtonsEP[7].addEventListener('click', (ele) => {carregar.innerHTML = data[7];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 08';
+            });
+        }
+
+        // Menu para versão Mobile
+        // Bloqueador de repetições
+        var menuMobileREP = true;
+        abrirMenu.addEventListener('click', () => {
+            if(menuMobileREP){
+                menuMobileREP = false;
+                var container = document.createElement('div');
+                container.setAttribute('class', 'menuMobile');
+                container.innerHTML = '<ul><li><a href="../../../index.html">Início</a></li><li><a href="#">Lista de Animes</a></li><li><a href="#">Favoritos</a></li><li><a href="#">Mangás</a></li><li><a href="#">Calendário</a></li><li><a href="#">Como Assistir?</a></li></ul><div class="menuMobileFechar"><ion-icon name="close-outline"></ion-icon></div>';
+                body.append(container);
+            }
+
+            document.querySelector('.menuMobileFechar').addEventListener('click', () => {
+                menuMobileREP = true;
+                container.remove();
+            });
+        });
+
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
