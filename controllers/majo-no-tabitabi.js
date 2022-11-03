@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/agk', (req, res) => {
-  res.render('pages/akame-ga-kill')
+router.get('/mnt', (req, res) => {
+  res.render('pages/majo-no-tabitabi')
 })
 
 module.exports = router;
