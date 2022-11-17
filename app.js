@@ -24,14 +24,16 @@ const ijiraideNagatoro = require('./controllers/ijiranaide-nagatoro');
 app.use('/', ijiraideNagatoro);
 const kimiNoNaWa = require('./controllers/kimi-no-na-wa');
 app.use('/', kimiNoNaWa);
-// const akameGaKill = require('./controllers/akame-ga-kill');
-// app.use('/', akameGaKill);
-// const akameGaKill = require('./controllers/akame-ga-kill');
-// app.use('/', akameGaKill);
-// const akameGaKill = require('./controllers/akame-ga-kill');
-// app.use('/', akameGaKill);
-// const akameGaKill = require('./controllers/akame-ga-kill');
-// app.use('/', akameGaKill);
+const maiddragon = require('./controllers/maid-dragon');
+app.use('/', maiddragon);
+const majonotabitabi = require('./controllers/majo-no-tabitabi');
+app.use('/', majonotabitabi);
+const nogamenolife = require('./controllers/no-game-no-life');
+app.use('/', nogamenolife);
+const shinnonakama = require('./controllers/shin-no-nakama');
+app.use('/', shinnonakama);
+const spyxfamily = require('./controllers/spy-x-family');
+app.use('/', spyxfamily);
 
 // Server Listen
 app.listen(port, () => console.log(`Servidor rodando ${port}`));
