@@ -4,13 +4,18 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #111111;
+  /* background-color: #111111; */
+  background: url('../resources/img/elaina-background.jpg') no-repeat center center/cover;
+}
+/* => Apenas a correção de um pequeno detalhe visual */
+html {
+  background-color: black;
 }
 /* Cabeçalho */
 
 .cabecalho {
   width: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,10 +80,11 @@ a {
   box-shadow: 0 0 10px white; 
 }
 
+/* => Background diferente */
 .lista-animes {
   width: 100%;
   padding: 20px;
-  background-color: #222;
+  background-color: rgba(34, 34, 34, 0.6);
   height: auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -100,17 +106,22 @@ a {
   color: white;
   font-weight: bold;
   font-size: 18px;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 20px;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  background-color: #431370d5;
 }
 .sinopse-anime {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   padding: 20px;
   text-align: justify;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .age-anime {
   width: 100%;
@@ -140,18 +151,28 @@ a {
   margin-top: 2px;
 }
 .lista-animes article {
-  background-color: #444;
+  /* background-color: #444; */
+  background-image: radial-gradient(circle at 12.5% 12.5%, #594a79 0, #3c3266 25%, #191a53 50%, #000040 75%, #000031 100%);
   /* width: 200px; */
-  border: 3px solid black;
+  border: 3px solid rgb(150, 150, 150);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 12px;
+  box-shadow: 0 0 20px black;
+  overflow: hidden;
 }
+/* => Modificações */
 .lista-animes article a img {
+  transition: 200ms;
   width: 95%;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 15px;
+}
+.lista-animes article:hover a img {
+  transform: scale(1.1) translateY(-20px);
 }
 .lista-animes article h1 {
   color: yellow;
@@ -161,12 +182,17 @@ a {
   text-align: center;
   padding-bottom: 6px;
 }
+
 .lista-animes article a {
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.conteiner {
+  height: 400px;
+  overflow-y: scroll;
 }
 .conteiner ul li .button {
   background-color: #222;
@@ -286,6 +312,7 @@ a {
       cursor: pointer;
   }
 }
+
 
 /* Catalógo responsivo */
 @media (max-width: 1300px)
