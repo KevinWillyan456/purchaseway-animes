@@ -1,7 +1,7 @@
 // Import
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 5000;
 
 // View Engine
 app.set('view engine', 'ejs');
