@@ -80,6 +80,22 @@ a {
   box-shadow: 0 0 10px white; 
 }
 
+/* => Barra de Pesquisa */
+.barra-pesquisa {
+  width: 100%;
+  background-color: rgba(34, 34, 34, 0.6);
+  padding: 20px;
+}
+.barra-pesquisa input {
+  background: #721ec0;
+    border-radius: 10px;
+    border: 0;
+    padding: 15px 15px 15px 20px;
+    width: 100%;
+    outline: none;
+    color: white;
+}
+
 /* => Background diferente */
 .lista-animes {
   width: 100%;
