@@ -6,6 +6,3 @@ router.get('/knnw', (req, res) => {
 })
 
 module.exports = router;
-
-
-/* Continua */
