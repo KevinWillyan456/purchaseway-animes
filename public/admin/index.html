@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Animes</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>Catálogo de <b>Animes</b></h2>
+            </div>
+            <div class="col-sm-6">
+              <a
+                href="#adicionarAnimeModal"
+                class="btn btn-success"
+                data-toggle="modal"
+                ><i class="material-icons">&#xE147;</i>
+                <span>Cadastrar Anime</span></a
+              >
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover w-auto">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Gênero</th>
+              <th>Descrição</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="animes"></tbody>
+        </table>
+        <div class="clearfix">
+          <div id="counter" class="hint-text"></div>
+        </div>
+      </div>
+    </div>
+    <!-- View Modal HTML -->
+    <div id="visualizarAnimeModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Visualizar Anime</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Nome:</label>
+              <spam id="view-nome"></spam>
+            </div>
+            <div class="form-group">
+              <label>Gênero:</label>
+              <spam id="view-genero"></spam>
+            </div>
+            <div class="form-group">
+              <label>Ano:</label>
+              <spam id="view-ano"></spam>
+            </div>
+            <div class="form-group">
+              <label>Imagem de capa:</label><br>
+              <img id="view-urlcapa" class="view-capa" src="" alt="" style="max-width:50%;">
+            </div>
+            <div class="form-group">
+              <label>URL do trailer:</label>
+              <a id="view-urltrailer" href="" target="_blank"></a>
+            </div>
+            <div class="form-group">
+              <label>Sinopse:</label>
+              <p id="view-sinopse" style="text-align: justify;"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Modal HTML -->
+    <div id="adicionarAnimeModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form
+            action="javascript:void(0);"
+            method="POST"
+            onsubmit="cadastrarAnime()"
+          >
+            <div class="modal-header">
+              <h4 class="modal-title">Cadastrar Anime</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Nome</label>
+                <input
+                  type="text"
+                  id="add-nome"
+                  placeholder="Informe o nome do anime"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Gênero</label>
+                <input
+                  type="text"
+                  id="add-genero"
+                  placeholder="Informe o gênero do anime"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Ano</label>
+                <input
+                  type="number"
+                  min="1900"
+                  min="2030"
+                  id="add-ano"
+                  placeholder="Informe o ano anime"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>URL imagem de capa</label>
+                <input
+                  type="url"
+                  id="add-urlcapa"
+                  placeholder="http://www.site.com/imagem.jpg"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>URL do trailer</label>
+                <input
+                  type="url"
+                  id="add-urltrailer"
+                  placeholder="http://youtube.com/kJmsIh"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Sinopse</label>
+                <textarea
+                  id="add-sinopse"
+                  placeholder="Informe a sinopse do Anime"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+                value="Cancelar"
+              />
+              <input type="submit" class="btn btn-success" value="Cadastrar" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Modal HTML -->
+    <div id="editarAnimeModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="javascript:void(0);" onsubmit="editarAnime()">
+            <input type="hidden" id="edit-id" />
+            <div class="modal-header">
+              <h4 class="modal-title">Editar Anime</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Nome</label>
+                <input
+                  type="text"
+                  id="edit-nome"
+                  placeholder="Informe o nome do anime"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Gênero</label>
+                <input
+                  type="text"
+                  id="edit-genero"
+                  placeholder="Informe o gênero do anime"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Ano</label>
+                <input
+                  type="number"
+                  id="edit-ano"
+                  min="1900"
+                  max="2030"
+                  placeholder="Informe o ano do anime"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>URL imagem de capa</label>
+                <input
+                  type="url"
+                  id="edit-urlcapa"
+                  placeholder="http://www.site.com/imagem.jpg"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>URL do trailer</label>
+                <input
+                  type="url"
+                  id="edit-urltrailer"
+                  placeholder="http://youtube.com/kJmsIh"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Sinopse</label>
+                <textarea
+                  id="edit-sinopse"
+                  placeholder="Informe a sinopse do Anime"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+                value="Cancelar"
+              />
+              <input type="submit" class="btn btn-info" value="Salvar" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Modal HTML -->
+    <div id="excluirAnimeModal" class="modal fade">
+      <input type="hidden" id="delete-id" />
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="javascript:void(0);" onsubmit="excluirAnime()">
+            <div class="modal-header">
+              <h4 class="modal-title">Excluir Anime</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Tem certeza de que deseja excluir o anime <b><span id="delete-nome"></span></b>?</p>
+              <p class="text-warning">
+                <small>Esta ação não poderá ser revertida.</small>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <input
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+                value="Cancelar"
+              />
+              <input type="submit" class="btn btn-danger" value="Excluir" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+      listarAnimesService();
+
+      $("#adicionarAnimeModal").submit(function() {
+        $("#adicionarAnimeModal").modal("hide");
+      });
+
+      $("#editarAnimeModal").submit(function() {
+        $("#editarAnimeModal").modal("hide");
+      });
+
+      $("#excluirAnimeModal").submit(function() {
+        $("#excluirAnimeModal").modal("hide");
+      });
+    </script>
+  </body>
+</html>
