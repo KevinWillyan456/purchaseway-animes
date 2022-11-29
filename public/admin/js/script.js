@@ -60,6 +60,7 @@ async function cadastrarAnime() {
     genero: generoInputText.value.trim(),
     ano: parseInt(anoInputText.value.trim()),
     urlCapa: urlCapaInputText.value.trim(),
+    urlRota: '/default',
     urlTrailer: urlTrailerInputText.value.trim(),
     sinopse: sinopseInputText.value.trim()
   };
@@ -110,12 +111,56 @@ async function editarAnime() {
   const urlTrailerInputText = document.getElementById("edit-urltrailer");
   const sinopseInputText = document.getElementById("edit-sinopse");
 
+  /* Aqui foi resolvido o conflito entre as rotas */
+
+  const resolverRota = [
+    'Kobayashi-san Chi no Maid Dragon Dublado',
+    'Akame ga Kill! Dublado',
+    'Darling In The FranXX Dublado',
+    'Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node Dublado',
+    'Spy x Family Dublado',
+    'Majo no Tabitabi Dublado',
+    'Ijiranaide, Nagatoro-san Dublado',
+    'Kimi no Na Wa Dublado',
+    'Date A Live',
+    'No Game no Life Dublado'
+  ]
+  const resolverRotaId = [
+    '/md',
+    '/agk',
+    '/ditf',
+    '/snn',
+    '/sxf',
+    '/mnt',
+    '/ins',
+    '/knnw',
+    '/dal',
+    '/ngnl'
+  ]
+
+  var rotaResolvida;
+  
+  function resolverRotaFunction(rt, rtid){
+    for(var i = 0; i < rt.length; i++){
+      if(rt[i] == nomeInputText.value.trim()){
+        rotaResolvida = rtid[i];
+        return
+      }
+      else {
+        rotaResolvida = '/default';
+      }
+    }
+  }
+
+  resolverRotaFunction(resolverRota, resolverRotaId);
+  
   const anime = {
     id: parseInt(idAnime),
     nome: nomeInputText.value.trim(),
     genero: generoInputText.value.trim(),
     ano: parseInt(anoInputText.value.trim()),
     urlCapa: urlCapaInputText.value.trim(),
+    urlRota: rotaResolvida,
     urlTrailer: urlTrailerInputText.value.trim(),
     sinopse: sinopseInputText.value.trim()
   };

@@ -87,13 +87,23 @@ a {
   padding: 20px;
 }
 .barra-pesquisa input {
+  transition: 200ms;
   background: #721ec0;
-    border-radius: 10px;
-    border: 0;
-    padding: 15px 15px 15px 20px;
-    width: 100%;
-    outline: none;
-    color: white;
+  border-radius: 10px;
+  border: 0;
+  padding: 15px 20px;
+  width: 100%;
+  border: 5px solid black;
+  outline: none;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+.barra-pesquisa input::placeholder {
+  color: white;
+}
+.barra-pesquisa input:focus {
+  background: #501587;
 }
 
 /* => Background diferente */
@@ -288,6 +298,56 @@ a {
 .menuMobile ul li a:hover {
   box-shadow: 0 0 10px white; 
 }
+
+/* Navegar para tela de Cadastro */
+
+.navegar-cadastro {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(34, 34, 34, 0.6);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 20px 0;
+  flex-direction: column;
+}
+.navegar-cadastro-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(114, 30, 192, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 0 20px;
+
+}
+.navegar-cadastro .t1 {
+  font-size: 20px;
+  padding: 10px 0;
+  text-align: center;
+}
+.navegar-cadastro .t2 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.navegar-cadastro .navegar-cadastro-conteiner a {
+  transition: 200ms;
+  background-color: #721ec0;
+  font-size: 18px;
+  border-radius: 10px;
+  color: inherit;
+  border: 5px solid black;
+  text-decoration: none;
+  padding: 20px;
+}
+.navegar-cadastro .navegar-cadastro-conteiner a:hover {
+  box-shadow: 0 0 10px white; 
+}
+
+
 /* Footer - Rodapé */
 
 .rodape {
