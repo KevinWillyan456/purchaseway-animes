@@ -20,6 +20,8 @@ routes.loadRoutes(app);
 // # Pages
 const indexController = require('./controllers/index-controller');
 app.use('/', indexController);
+const defaultPage = require('./controllers/default');
+app.use('/', defaultPage);
 
 // 10 páginas
 const akameGaKill = require('./controllers/akame-ga-kill');
