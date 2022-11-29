@@ -45,3 +45,7 @@ function criaAnimes(){
   })
   console.log(animes)
 }
+
+/* Implementando o sistema de busca */
+
+/* Continuar depois */
