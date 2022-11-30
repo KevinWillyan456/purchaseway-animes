@@ -22,7 +22,10 @@ abrirMenu.addEventListener('click', () => {
 /* Implementação do sistema de listagem */
 
 let animes = [];
+let animesFiltrado = [];
+
 const containerAnimes = $('.lista-animes');
+const noFound = $('.no-found');
 
 async function listarAnimesService() {
   const resposta = await fetch('api/animes');
@@ -48,4 +51,28 @@ function criaAnimes(){
 
 /* Implementando o sistema de busca */
 
-/* Continuar depois */
+const buscarInput = document.querySelector('#search-anime');
+
+
+buscarInput.oninput = () => {
+  containerAnimes.html("");
+  $(noFound).addClass('hidden');
+  
+  animesFiltrado = animes.filter(
+    (anime) =>
+      anime.nome.toLowerCase().includes(buscarInput.value.toLowerCase())
+      ).forEach(animeFiltrado => {
+        containerAnimes.append(`
+        <article>
+        <a href="${animeFiltrado.urlRota}">
+        <img src="${animeFiltrado.urlCapa}">
+        <h1>${animeFiltrado.nome}</h1>
+        </a>
+        </article>
+        `)
+  })
+
+  if (containerAnimes.html() == ''){
+    $(noFound).removeClass('hidden');
+  }
+};

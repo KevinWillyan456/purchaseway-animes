@@ -106,6 +106,42 @@ a {
   background: #501587;
 }
 
+/* => no-found */
+
+.no-found.hidden {
+  display: none;
+}
+.no-found {
+  background-color: rgba(34, 34, 34, 0.6);
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.no-found .no-found-conteiner {
+  animation: no-found-conteiner-entrance 500ms forwards;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: rgba(114, 30, 192, 0.6);
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  border: 5px solid #721ec0;
+  border-radius: 10px;
+  box-shadow: 0 0 40px #721ec0;
+  padding: 20px;
+}
+@keyframes no-found-conteiner-entrance {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* => Background diferente */
 .lista-animes {
   width: 100%;
@@ -177,9 +213,7 @@ a {
   margin-top: 2px;
 }
 .lista-animes article {
-  /* background-color: #444; */
   background-image: radial-gradient(circle at 12.5% 12.5%, #594a79 0, #3c3266 25%, #191a53 50%, #000040 75%, #000031 100%);
-  /* width: 200px; */
   border: 3px solid rgb(150, 150, 150);
   border-radius: 10px;
   display: flex;
