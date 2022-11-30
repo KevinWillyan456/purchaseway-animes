@@ -1,6 +1,5 @@
 body {
   color: #566787;
-/*   background: #f5f5f5; */
   background: url('../img/elaina-wallpaper-winter.jpg') no-repeat center center/cover;
   min-height: 100vh;
   font-family: "Varela Round", sans-serif;
@@ -246,7 +245,7 @@ table.table .avatar {
   font-weight: normal;
 }
 
-/* Navegar para tela de Cadastro */
+/* Navegar para tela de Ínicio */
 
 .navegar-cadastro { 
   width: 100%;

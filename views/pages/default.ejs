@@ -101,13 +101,14 @@
 
     <section class="tela-exibicao">
         <div class="carregar">
-            <iframe src="https://drive.google.com/file/d/1m0Y98AoUnL3uu9KDvJZg6DHR3TzFvPw-/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>
+            <iframe src="https://drive.google.com/file/d/1oNiRd5rb4h3uvjmBN0XL7BfyOwUDiiQf/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>
         </div>
     </section>
     
     <section class="conteiner">
         <ul>
             <li><button class="selected-episode">EP 1</button></li>
+            <li><button class="button">EP 2</button></li>
         </ul>
     </section>
 
@@ -132,7 +133,8 @@
 
         // DATA = É onde fica alocado os dados dos episódios
         var data = [
-          '<iframe src="https://drive.google.com/file/d/1m0Y98AoUnL3uu9KDvJZg6DHR3TzFvPw-/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>'
+            '<iframe src="https://drive.google.com/file/d/1oNiRd5rb4h3uvjmBN0XL7BfyOwUDiiQf/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>',
+            '<iframe src="https://drive.google.com/file/d/1m0Y98AoUnL3uu9KDvJZg6DHR3TzFvPw-/preview" width="640" height="480" allow="autoplay" allowfullscreen="allowfullscreean"></iframe>'
         ]
 
         // Controlador
@@ -146,6 +148,15 @@
                 ele.target.classList.remove('button');
                 ele.target.classList.add('selected-episode');
                 painel.innerHTML = 'EP 01';
+            });
+            allButtonsEP[1].addEventListener('click', (ele) => {carregar.innerHTML = data[1];
+                for(var i = 0; i < allButtonsEP.length; i++){
+                    allButtonsEP[i].classList.add('button');
+                    allButtonsEP[i].classList.remove('selected-episode');
+                }
+                ele.target.classList.remove('button');
+                ele.target.classList.add('selected-episode');
+                painel.innerHTML = 'EP 02';
             });
         }
 
